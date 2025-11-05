@@ -1,7 +1,16 @@
-# List and array stores same type of datatype
-# Tuple stores any type of data into it. Multiple data type in one tuple
-# We use array to store data in a contiguous manner and time complexity to find data in any index is O(1)
-# When we use a list it stores data in a non-contiguous manner and time complexity to find data in any index is O(n) cause the list have to traverse through every index to find the memory address of next index. Every index in a list stores the memory address of element before and after that index.
+#Everything is python is an object no matter what it is !!
 
-# That is why it is impossible to change the size of an array after resising it. But we can use a vector, but that will give a problem if there are high space constraints.
-# So if you can afford TC = O(n) but low on memory, you must use a list
+# In C++, you control how data is passed:
+    # Pass By value → a copy is made.
+    # Pass By reference (using &) → no copy, just an alias.
+    # Arrays decay into pointers, so they behave like references by default.
+
+# In Python, it’s simpler but trickier to describe precisely:
+    # Everything is an object, and variables are references to those objects.
+    # When you pass something to a function, the reference is copied (so the function gets another reference to the same object).
+    # If the object is mutable (like lists, dicts, NumPy arrays), modifications inside the function are visible outside.
+    # If it’s immutable (like ints, strings, tuples), reassignments inside the function don’t affect the caller.
+
+# So in short:
+    # C++: You choose pass-by-value or pass-by-reference.
+    # Python: Always passes object references, but the mutability of the object (variable, data str, object) determines whether changes persist.
