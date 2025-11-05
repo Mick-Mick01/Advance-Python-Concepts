@@ -1,22 +1,16 @@
-# Checking if list and dictionaries are mutable or not. We have already seen that list are mutable in out projects
+# *args and **kwargs
+# Name does not matter just the starts matters
 
-myDict = {
-    "name":"Dev",
-    "age":45
-}
-myLis = ['d', 'd', 'y', 'e']
+#  We use *args to take variable number of arguments in a function
+#  *args is of type tuple
+#  Print(type(args))
 
+def specialFunction(*args):
+    for values in args:
+        print(values)
 
-# I WILL LEARN ALL THE FUNCTONS APPLICABLE TO A DICTIONARY LATER ON-!!
-def myFunc(myDict):
-    for key, value in myDict.items():
-        myDict[key] = "Harry"
+specialFunction("harry", 56, 9900, 99.007, "hello")
+print('\n')
+specialFunction(45, "Dev", "Mohan", 556.404, "humans")
 
-def myFunc2(lis):
-    for i in range(len(lis)):
-        lis[i] = 'a'
-
-myFunc(myDict)
-print(myDict)
-myFunc2(myLis)
-print(myLis)
+#NOW WE'LL START ABOUT **KWARGS
