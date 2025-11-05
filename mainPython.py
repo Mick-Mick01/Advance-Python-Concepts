@@ -1,16 +1,19 @@
-#Everything is python is an object no matter what it is !!
+'''
+My Ques: Just like we know everything in python is an object like the variables, data structures, etc. Is this the same for other OOP languages like in C++ ?
+'''
 
-# In C++, you control how data is passed:
-    # Pass By value → a copy is made.
-    # Pass By reference (using &) → no copy, just an alias.
-    # Arrays decay into pointers, so they behave like references by default.
+# In Python, everything truly is an object: numbers, functions, classes, even modules. Every variable is just a reference to an object on the heap. There’s no distinction between “primitive” and “object” types.
 
-# In Python, it’s simpler but trickier to describe precisely:
-    # Everything is an object, and variables are references to those objects.
-    # When you pass something to a function, the reference is copied (so the function gets another reference to the same object).
-    # If the object is mutable (like lists, dicts, NumPy arrays), modifications inside the function are visible outside.
-    # If it’s immutable (like ints, strings, tuples), reassignments inside the function don’t affect the caller.
+# In C++ and most other statically typed OOP languages, things are more divided:
+    # Primitive types (int, char, double, bool, etc.) are not objects. They live on the stack, and you can’t call methods on them.
+    # Objects (instances of class or struct) live in memory you manage — on the stack or heap — and they can have methods, constructors, destructors, etc.
+    # References and pointers are ways to refer to objects, and are not objects themselves.
 
-# So in short:
-    # C++: You choose pass-by-value or pass-by-reference.
-    # Python: Always passes object references, but the mutability of the object (variable, data str, object) determines whether changes persist.
+# So, while Python treats everything uniformly as an object reference, C++ draws a hard line between:
+    # Values (raw data, like int x = 5;)
+    # Objects (instances of classes)
+    # References/pointers (aliases to those values or objects)
+
+# You could say:
+    # Python is “object-all-the-way-down.”
+    # C++ is “object-oriented, but not object-everything.”
